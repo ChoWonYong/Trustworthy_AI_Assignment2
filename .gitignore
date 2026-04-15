@@ -6,4 +6,5 @@ __pycache__/
 train_log.txt
 *.pyc
 
-.DS_store
+.DS_Store
+*/.DS_Store
