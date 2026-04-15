@@ -1,0 +1,153 @@
+/home/aiuser/chooneyong/trustworthy2/test.py:291: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(path, map_location=device))
+Device: cuda
+PyTorch version: 2.5.1+cu121
+
+Found existing checkpoints — skipping training.
+
+Loading Model 1 from models/resnet50_cifar10_model1.pth
+Loading Model 2 from models/resnet50_cifar10_model2.pth
+
+Registering neuron coverage hooks...
+  Tracker 1 monitors 4 ResNet layers
+  Tracker 2 monitors 4 ResNet layers
+
+Sampling 100 seed images from CIFAR-10 test set...
+Files already downloaded and verified
+  Loaded 100 seed images (224×224, normalized)
+
+Running DeepXplore (transformation='light')...
+  weight_diff=2.0, weight_nc=0.1, step=1.0, iterations=100
+[Seed 001/100] M1=cat, M2=cat  → no disagreement after 100 iters
+[Seed 002/100] M1=dog, M2=dog  → no disagreement after 100 iters
+[Seed 003/100] M1=frog, M2=frog  → no disagreement after 100 iters
+[Seed 004/100] M1=ship, M2=ship  → no disagreement after 100 iters
+[Seed 005/100] M1=horse, M2=horse  → no disagreement after 100 iters
+[Seed 006/100] M1=cat, M2=cat  → no disagreement after 100 iters
+[Seed 007/100] M1=deer, M2=deer  → disagreement at iter 15: M1=deer, M2=cat
+[Seed 008/100] M1=automobile, M2=automobile  → no disagreement after 100 iters
+[Seed 009/100] M1=ship, M2=ship  → no disagreement after 100 iters
+[Seed 010/100] M1=deer, M2=deer  → no disagreement after 100 iters
+    Coverage so far: M1=0.155, M2=0.134 | Disagreements: 1
+[Seed 011/100] M1=airplane, M2=airplane  → no disagreement after 100 iters
+[Seed 012/100] M1=horse, M2=horse  → no disagreement after 100 iters
+[Seed 013/100] M1=cat, M2=dog  → already disagrees!
+[Seed 014/100] M1=dog, M2=dog  → no disagreement after 100 iters
+[Seed 015/100] M1=cat, M2=cat  → no disagreement after 100 iters
+[Seed 016/100] M1=automobile, M2=automobile  → no disagreement after 100 iters
+[Seed 017/100] M1=deer, M2=deer  → no disagreement after 100 iters
+[Seed 018/100] M1=airplane, M2=airplane  → no disagreement after 100 iters
+[Seed 019/100] M1=ship, M2=ship  → no disagreement after 100 iters
+[Seed 020/100] M1=frog, M2=frog  → no disagreement after 100 iters
+    Coverage so far: M1=0.233, M2=0.169 | Disagreements: 2
+[Seed 021/100] M1=truck, M2=truck  → no disagreement after 100 iters
+[Seed 022/100] M1=dog, M2=dog  → no disagreement after 100 iters
+[Seed 023/100] M1=horse, M2=horse  → no disagreement after 100 iters
+[Seed 024/100] M1=cat, M2=cat  → no disagreement after 100 iters
+[Seed 025/100] M1=automobile, M2=automobile  → no disagreement after 100 iters
+[Seed 026/100] M1=deer, M2=deer  → no disagreement after 100 iters
+[Seed 027/100] M1=bird, M2=bird  → no disagreement after 100 iters
+[Seed 028/100] M1=dog, M2=bird  → already disagrees!
+[Seed 029/100] M1=dog, M2=dog  → no disagreement after 100 iters
+[Seed 030/100] M1=truck, M2=airplane  → already disagrees!
+[Seed 031/100] M1=truck, M2=truck  → no disagreement after 100 iters
+[Seed 032/100] M1=ship, M2=ship  → no disagreement after 100 iters
+[Seed 033/100] M1=airplane, M2=airplane  → no disagreement after 100 iters
+[Seed 034/100] M1=ship, M2=ship  → disagreement at iter 14: M1=airplane, M2=ship
+[Seed 035/100] M1=deer, M2=deer  → no disagreement after 100 iters
+[Seed 036/100] M1=ship, M2=ship  → no disagreement after 100 iters
+[Seed 037/100] M1=horse, M2=horse  → no disagreement after 100 iters
+[Seed 038/100] M1=automobile, M2=automobile  → no disagreement after 100 iters
+[Seed 039/100] M1=deer, M2=deer  → no disagreement after 100 iters
+[Seed 040/100] M1=dog, M2=dog  → no disagreement after 100 iters
+    Coverage so far: M1=0.370, M2=0.234 | Disagreements: 5
+[Seed 041/100] M1=bird, M2=bird  → no disagreement after 100 iters
+[Seed 042/100] M1=horse, M2=horse  → no disagreement after 100 iters
+[Seed 043/100] M1=ship, M2=ship  → no disagreement after 100 iters
+[Seed 044/100] M1=deer, M2=deer  → no disagreement after 100 iters
+[Seed 045/100] M1=cat, M2=cat  → no disagreement after 100 iters
+[Seed 046/100] M1=frog, M2=frog  → no disagreement after 100 iters
+[Seed 047/100] M1=airplane, M2=airplane  → no disagreement after 100 iters
+[Seed 048/100] M1=cat, M2=cat  → no disagreement after 100 iters
+[Seed 049/100] M1=cat, M2=cat  → no disagreement after 100 iters
+[Seed 050/100] M1=automobile, M2=automobile  → no disagreement after 100 iters
+    Coverage so far: M1=0.412, M2=0.240 | Disagreements: 5
+[Seed 051/100] M1=automobile, M2=automobile  → no disagreement after 100 iters
+[Seed 052/100] M1=cat, M2=cat  → no disagreement after 100 iters
+[Seed 053/100] M1=automobile, M2=automobile  → no disagreement after 100 iters
+[Seed 054/100] M1=ship, M2=ship  → no disagreement after 100 iters
+[Seed 055/100] M1=frog, M2=frog  → no disagreement after 100 iters
+[Seed 056/100] M1=horse, M2=frog  → already disagrees!
+[Seed 057/100] M1=dog, M2=dog  → no disagreement after 100 iters
+[Seed 058/100] M1=automobile, M2=automobile  → no disagreement after 100 iters
+[Seed 059/100] M1=deer, M2=deer  → no disagreement after 100 iters
+[Seed 060/100] M1=deer, M2=deer  → no disagreement after 100 iters
+    Coverage so far: M1=0.427, M2=0.250 | Disagreements: 6
+[Seed 061/100] M1=automobile, M2=automobile  → no disagreement after 100 iters
+[Seed 062/100] M1=cat, M2=cat  → no disagreement after 100 iters
+[Seed 063/100] M1=airplane, M2=airplane  → no disagreement after 100 iters
+[Seed 064/100] M1=ship, M2=ship  → no disagreement after 100 iters
+[Seed 065/100] M1=cat, M2=cat  → no disagreement after 100 iters
+[Seed 066/100] M1=ship, M2=ship  → no disagreement after 100 iters
+[Seed 067/100] M1=frog, M2=frog  → no disagreement after 100 iters
+[Seed 068/100] M1=horse, M2=horse  → no disagreement after 100 iters
+[Seed 069/100] M1=cat, M2=cat  → no disagreement after 100 iters
+[Seed 070/100] M1=automobile, M2=automobile  → no disagreement after 100 iters
+    Coverage so far: M1=0.434, M2=0.258 | Disagreements: 6
+[Seed 071/100] M1=deer, M2=deer  → no disagreement after 100 iters
+[Seed 072/100] M1=deer, M2=deer  → no disagreement after 100 iters
+[Seed 073/100] M1=deer, M2=deer  → no disagreement after 100 iters
+[Seed 074/100] M1=frog, M2=frog  → no disagreement after 100 iters
+[Seed 075/100] M1=bird, M2=bird  → no disagreement after 100 iters
+[Seed 076/100] M1=ship, M2=ship  → no disagreement after 100 iters
+[Seed 077/100] M1=airplane, M2=airplane  → no disagreement after 100 iters
+[Seed 078/100] M1=horse, M2=horse  → no disagreement after 100 iters
+[Seed 079/100] M1=cat, M2=dog  → already disagrees!
+[Seed 080/100] M1=deer, M2=deer  → no disagreement after 100 iters
+    Coverage so far: M1=0.457, M2=0.263 | Disagreements: 7
+[Seed 081/100] M1=frog, M2=frog  → no disagreement after 100 iters
+[Seed 082/100] M1=automobile, M2=automobile  → no disagreement after 100 iters
+[Seed 083/100] M1=airplane, M2=airplane  → no disagreement after 100 iters
+[Seed 084/100] M1=airplane, M2=cat  → already disagrees!
+[Seed 085/100] M1=automobile, M2=automobile  → no disagreement after 100 iters
+[Seed 086/100] M1=ship, M2=ship  → no disagreement after 100 iters
+[Seed 087/100] M1=cat, M2=cat  → no disagreement after 100 iters
+[Seed 088/100] M1=truck, M2=truck  → no disagreement after 100 iters
+[Seed 089/100] M1=ship, M2=ship  → no disagreement after 100 iters
+[Seed 090/100] M1=cat, M2=cat  → no disagreement after 100 iters
+    Coverage so far: M1=0.467, M2=0.267 | Disagreements: 8
+[Seed 091/100] M1=automobile, M2=automobile  → no disagreement after 100 iters
+[Seed 092/100] M1=ship, M2=ship  → no disagreement after 100 iters
+[Seed 093/100] M1=truck, M2=truck  → no disagreement after 100 iters
+[Seed 094/100] M1=airplane, M2=airplane  → no disagreement after 100 iters
+[Seed 095/100] M1=automobile, M2=automobile  → no disagreement after 100 iters
+[Seed 096/100] M1=cat, M2=cat  → no disagreement after 100 iters
+[Seed 097/100] M1=airplane, M2=airplane  → no disagreement after 100 iters
+[Seed 098/100] M1=automobile, M2=truck  → already disagrees!
+[Seed 099/100] M1=ship, M2=ship  → no disagreement after 100 iters
+[Seed 100/100] M1=bird, M2=bird  → no disagreement after 100 iters
+    Coverage so far: M1=0.482, M2=0.272 | Disagreements: 9
+
+============================================================
+DEEPXPLORE RESULTS SUMMARY
+============================================================
+Total disagreement-inducing inputs : 9
+Neuron coverage – Model 1          : 0.4820 (48.2%)
+Neuron coverage – Model 2          : 0.2721 (27.2%)
+Average neuron coverage            : 0.3771 (37.7%)
+
+Disagreement class pairs:
+  Model1=cat          | Model2=dog          : 2
+  Model1=deer         | Model2=cat          : 1
+  Model1=dog          | Model2=bird         : 1
+  Model1=truck        | Model2=airplane     : 1
+  Model1=airplane     | Model2=ship         : 1
+  Model1=horse        | Model2=frog         : 1
+  Model1=airplane     | Model2=cat          : 1
+  Model1=automobile   | Model2=truck        : 1
+============================================================
+
+Saving visualizations to 'results/'...
+Overview saved to results/disagreements_overview.png
+
+Done.
